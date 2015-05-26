@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/
 """
 
 from django.core.wsgi import get_wsgi_application
+import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "story.settings")
 
 from whitenoise.django import DjangoWhiteNoise
