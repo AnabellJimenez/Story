@@ -59,6 +59,7 @@ div.transbox {
     filter: alpha(opacity=50); /* For IE8 and earlier */
 }
 
+
 div.transbox p {
     margin: 5%;
     font-weight: bold;
@@ -69,4 +70,9 @@ div.transbox p {
 
 .item.w2 { width: 50%; }
 
-.grid-sizer { width: 100%; }
+.grid-sizer { width: 85%; }
+
+#fit-width .masonry {
+  margin: 0 auto;
+}
+

@@ -2,15 +2,14 @@
 
 <title>GALLERY</title>
 <html>
-	<div id="container" style ="position: relative; height:8320px">
-  		<div class="grid-sizer">
+
+
+	<div class="masonry js-masonry"  data-masonry-options='{ "isFitWidth": true }'>
+  		
 	
 						{% for pic in pics_list %}
-							<a href="http://127.0.0.1:8000/post/{{pic.1}}"><img src="{{ pic.0 }}" style="height:448px"></a>		
+							<a href="http://127.0.0.1:8000/post/{{pic.1}}"><img src="{{ pic.0 }}" style="height:413px"></a>		
 								{% endfor %}
-
-
-  		</div>
 	</div>
 
 
@@ -22,7 +21,7 @@ $(document).ready
 var container = document.querySelector('#container');
 var msnry = new Masonry( container, {
   // options
-  columnWidth: 200,
+  columnWidth: 120,
   itemSelector: '.item'
 });
 

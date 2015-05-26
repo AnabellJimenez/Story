@@ -4,21 +4,15 @@
 
 <title>{{request.user.name}} Story</title>
 <html>
-
-	<div id="container" style ="position: relative; height:8320px">
-  		<div class="grid-sizer">						
+					
 						{% for pic in pics %}
 
 							<a href="http://127.0.0.1:8000/post/{{pic.1}}"><img src="{{ pic.0 }}" style="height:448px"></a>
 		
 								
 						{% endfor %}
+					{% endblock %}
 
-
-  		</div>
-	</div>
-
-{% endblock %}
 
 <script src="///cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min.js"></script>
 
@@ -33,7 +27,7 @@ var msnry = new Masonry( container, {
 
 </script>
 
-</html>
+
 
 						
 </html>
