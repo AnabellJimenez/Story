@@ -1,0 +1,24 @@
+{% extends "story/base.html" %}
+
+
+<html>
+<body>
+
+
+{% block content %}
+
+
+<div class = "container-fluid">
+	<div class="row">
+  		<div class="col-md-6 col-md-offset-3">
+			<form class="well span8" action="/post/create" method="post">
+				{% csrf_token %}
+
+						<label>Story title</label>
+						<input type="text"  name = "post_title" placeholder="Name your story">
+						<input type="text"  name = "post_text" placeholder="describe your story">
+						<input type="submit" value="Submit">   
+  			</form>
+{% endblock %}
+</body>
+</html>

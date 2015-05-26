@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<html>
+      {% if user.first_name %}
+                       <h2> Hi {{user.first_name}} </h2>
+                {% endif %}
+
+<div class="navbar-header">
+    <ul class="nav nav-pills nav navbar-nav navbar-right" >
+    {% if user.first_name %}
+      <li role="presentation" ><a href="/users/home">Home</a></li>
+      <li role="presentation"><a href="/post">Share</a></li>
+      <li role="presentation"><a href="/post/list">Your Stories</a></li>
+      <li role="presentation"><a href="/post/gallery">Gallery</a></li>
+      <li role="presentation"><a href="/post/user_profile">User Profile</a></li>
+      <li role="presentation" ><a href="/users/log_out">Log Out</a></li>
+    {% endif %}
+    </ul>
+
+  </div>
+
+<head>
+	{% load staticfiles %}
+    	<link rel="stylesheet" href="{% static 'story/base.css' %}" type="text/css"/>
+    	     <title>{% block title %} Travel Story {% endblock %}</title>
+       
+              			<center>
+              					<h1> Share your story...</h1>
+              			</center>                   
+</head>
+
+<body> 
+
+	
+	{% block content %}
+
+				{% endblock %}
+	
+			</body>
+
+</body>

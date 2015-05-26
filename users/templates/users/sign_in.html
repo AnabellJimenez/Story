@@ -1,0 +1,37 @@
+{% extends "story/base.html" %}
+
+{% block stylesheet %} 
+<html>
+	<body>
+		
+		{% block content %}
+
+		<form class="form-inline" action="/users/verify/" method="post">
+			{% csrf_token %}
+  			<div class="form-group">
+			    <label class="sr-only" for="exampleInputEmail3">User Name</label>
+			    <input type="text" class="form-control" type = "text" name = "username" placeholder="User Name">
+			  </div>
+			  <div class="form-group">
+			    <label class="sr-only" for="exampleInputPassword3">Password</label>
+			    <input type="password" class="form-control" name = "password" placeholder="Password">
+			  </div>
+			  <button type="submit" class="btn btn-default">Sign in</button>
+			</form>
+
+			<center>
+				<p> Not a member? Tell your story! 
+			
+				</form>
+				<form action="/users/register/" method="post">
+				{% csrf_token %}
+				<input type = "submit" value = "Register">
+				<br>
+				</p>
+			</center>
+
+			{% endblock %}
+		{% endblock %}
+		</form>
+	</body>
+</html>

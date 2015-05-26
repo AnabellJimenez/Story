@@ -1,0 +1,26 @@
+{% extends "story/base.html" %}
+{% block content %}
+<html>
+	<body>
+		
+			<div class="container">
+				<div class="jumbotron">
+					<div class="row">
+  						<div class="col-md-6 col-md-offset-3">
+					  	<center> 
+							<p> UPLOAD IMAGE <p/>
+							<form action="/post/{{post_id}}/upload_file" method="POST" enctype="multipart/form-data">
+								{% csrf_token %}
+								{{ form }}
+								<br>
+								<input type = "submit" value = "Submit">
+								<br>
+							</form>
+						</center>
+						 </div>		
+	 				</div>
+				 </div>		
+	 		</div>
+	</body>
+</html>
+{% endblock %}

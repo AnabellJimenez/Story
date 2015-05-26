@@ -1,0 +1,63 @@
+{% extends "story/base.html" %}
+
+
+<html>
+<body>
+{% block content %}
+<div class = "container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="background">
+                 <div class="transbox">
+
+                    <h1>{{post.post_title}}</h1>
+                    <p>{{post.post_text}}</p>
+
+                     <form action = "/post/{{post.id}}/upload_file/" method = "GET">
+                                    {% csrf_token %}
+                                    <input type ="submit" value = "+ Photo">
+                                </form>
+
+                    {% if user.first_name == post.user.first_name %}
+                          <form action = "/post/{{post.id}}/delete_post/" method = "post">
+                                    {% csrf_token %}
+                                    <input type ="submit" value = "delete">
+                                </form>
+                    {% endif %}
+
+                    <h2> Thoughts About this Story </h2>
+                    {% if post.comment_set.all %}
+                        <ul>
+                        {% for comment in post.comment_set.all %}
+                            <li>{{ comment}} by {{comment.user.username }}</li>
+                            
+                            {% if user.first_name == comment.user.first_name %}
+                               <form action = "/post/{{comment.id}}/delete_comment/" method = "post">
+                                    {% csrf_token %}
+                                    <input type ="submit" value = "delete">
+                                </form>
+                            {% endif %}
+
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                    <center>
+                        <p>No comments are available.</p>
+                    {% endif %}
+                    <h2> comment on this post! </h2>
+                        <form action="/post/{{post_id}}/comment" method="post">
+                    		{% csrf_token %}
+                    		<input type = "text" name = "comment_text">
+                    		<input type = "submit" value = "comment">
+                    	</form>
+                     </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </html>
+</body>
+
+{% endblock %}

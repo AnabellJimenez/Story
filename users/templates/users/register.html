@@ -1,0 +1,31 @@
+{% extends "story/base.html" %}
+{% block content %}
+
+<html>
+<body><h3> JOIN US!</h3>
+<div class = "container-fluid">
+	<div class = "jumbotron">
+		<center>
+	<form action="/users/sign_up" method="post">
+		{% csrf_token %}
+		<br>First Name: <br>
+		<input type = "text" name = "first_name">
+		<br>Last Name: <br>
+		<input type = "text" name = "last_name">
+		<br>User Name: <br>
+		<input type = "text" name = "user_name">
+		<br>Email: <br>
+		<input type = "text" name = "email">
+		<br>password: <br>
+		<input type = "text" name = "password">
+		<br>
+		<input type = "submit" value = "Submit">
+		<br>
+	</form>
+</center>
+	</div>
+</div>
+</body>
+
+</html>
+{% endblock %}

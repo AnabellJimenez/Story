@@ -1,0 +1,66 @@
+@import url(http://fonts.googleapis.com/css?family=Stalemate:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+h1 {
+	font-size:90px;
+	color: black;
+	font-family: 'Stalemate', sans-serif;
+}
+
+h2 {
+	font-size:60px;
+	color: #707070;
+	font-family: 'Stalemate', sans-serif;
+	padding:-150px;
+}
+
+
+html { 
+  background: url('pic.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+a:link    {color:#222; background-color:transparent; text-decoration:none; font-size:30px }
+a:visited {color:#333; background-color:transparent; text-decoration:none; font-size:30px }
+a:hover   {color:#555; background-color:transparent; text-decoration:underline; font-size:30px }
+a:active  {color:#eee; background-color:transparent; text-decoration:underline; font-size:30px }
+
+a {
+	font-family: 'Oswald', sans-serif;
+}
+
+
+body{
+	/* background-color: #A5DBEB; */
+	background-color: rgba(0,0,0,0) !important;
+	color:#707070;
+	padding:20px;
+	font-size:20px;
+}
+
+.margin-base-vertical {
+		margin: 40px 0;
+	}
+
+
+div.background {
+    background: url(klematis.jpg) repeat;
+    border: 2px solid black;
+}
+
+div.transbox {
+    /*margin: 10px;*/
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+div.transbox p {
+    margin: 5%;
+    font-weight: bold;
+    color: #000000;
+}
