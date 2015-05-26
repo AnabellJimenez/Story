@@ -39,6 +39,9 @@ body{
 	color:#707070;
 	padding:20px;
 	font-size:20px;
+	margin: 0;
+	padding: 0;
+	border: none;
 }
 
 .margin-base-vertical {
