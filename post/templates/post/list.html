@@ -16,13 +16,13 @@
                 {% if post %}
                     <ul>
                     {% for item in post %}
-                		<a href="/{{item.id}}" class="list-group-item">{{ item.post_title }} by {{item.user.username}}</a>
+                		<a href="/post/{{item.id}}" class="list-group-item">{{ item.post_title }} by {{item.user.username}}</a>
                     {% endfor %}
                     </ul>
                 {% else %}
                     <p>No stories are available.</p>
                 {% endif %}			
-			<a class="navbar-brand" href="http://127.0.0.1:8000/post/feed">Browse Stories</a>
+			<a class="navbar-brand" href="/post/feed">Browse Stories</a>
                 </div>
             </div>
         </div>
