@@ -14,6 +14,6 @@ import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "story.settings")
 
 
-application = Cling(get_wsgi_application())
+application = get_wsgi_application()
 application = DjangoWhiteNoise(application)
 
