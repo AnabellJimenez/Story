@@ -1,33 +1,55 @@
-{% extends "story/base.html" %}
-
-{% block content %}
 
 <title>{{request.user.name}} Story</title>
-<html>
-					
-						{% for pic in pics %}
 
-							<a href="/post/{{pic.1}}"><img src="{{ pic.0 }}" style="height:448px"></a>
-		
-								
-						{% endfor %}
-					{% endblock %}
+
+<html>
+<head><script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+</head>
+	<div class="masonry js-masonry">
+		<div class= "item">
+  		
+	
+						{% for pic in pics %}
+							<a href="/post/{{pic.1}}"><img src="{{ pic.0 }}" style="height:400px"></a>		
+								{% endfor %}
+							
+		</div>
+	</div>
+
 
 
 <script src="///cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min.js"></script>
 
 <script>
-$(document).ready
-var container = document.querySelector('#container');
-var msnry = new Masonry( container, {
-  // options
-  columnWidth: 200,
-  itemSelector: '.item'
+$(document).ready(function () {
+	var container = document.querySelector('#container');
+	var msnry = new Masonry( container, {
+	  // options
+	  columnWidth: 120,
+	  itemSelector: '.item'
+	})
 });
+
 
 </script>
 
+ <script>
+$(window).load(function() {
 
+  var container = document.querySelector('#container');
+  var msnry;
 
-						
+  // initialize Masonry after all images have loaded
+  imagesLoaded( container, function() {
+    msnry = new Masonry( container, {
+      itemSelector: '.item',
+      // columnWidth: container.querySelector('.grid-sizer')
+    });
+  });
+
+  msnry.bindResize();
+
+});
+ </script>
+
 </html>

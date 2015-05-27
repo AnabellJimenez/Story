@@ -75,7 +75,8 @@ div.transbox p {
 
 .grid-sizer { width: 85%; }
 
-#fit-width .masonry {
-  margin: 0 auto;
+.masonry{
+	width: 100% !important;
+
 }
 
